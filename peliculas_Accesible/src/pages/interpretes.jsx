@@ -1,11 +1,13 @@
 import Contenedor from "../components/Contenedor";
-
-import Interprete from "../components/InterpreteAccesible";
-import peliculas from "../data/peliculas";
-
+import Interprete from "../components/Interprete";
+import peliculas from "../data/listapeliculas";
+import Navbar from "../components/navbar";
 function App() {
   return (
-    
+    <>
+    <header>
+    <Navbar />  
+</header>
     <Contenedor titulo="Intérpretes de películas destacadas">
       {/* <h1 className="font-heading-h1 leading-(--heading-h1-line-height) text-(--colorprimary) [text-shadow:0px_4px_4px_#00000040]"> */}
       {/* <h1 className="h1__sqlito [text-shadow:0px_4px_4px_#00000040]"> */}
@@ -65,6 +67,7 @@ function App() {
           )}
         </div>
     </Contenedor>
+    </>
   )
 }
 
