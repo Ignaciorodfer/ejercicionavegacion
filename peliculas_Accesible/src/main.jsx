@@ -3,8 +3,8 @@ import { createRoot } from 'react-dom/client'
 
 import { BrowserRouter } from 'react-router-dom'
 import './assets/index.css'
-import PeliculasPage from './pages/peliculas.jsx'
-import App from './pages/interpretes.jsx'
+import App from './App.jsx'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
      <BrowserRouter>
@@ -20,6 +20,4 @@ createRoot(document.getElementById('root')).render(
     </>  
     </BrowserRouter>
   </StrictMode>,
-
-
 )

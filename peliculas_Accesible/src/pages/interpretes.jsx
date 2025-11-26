@@ -1,34 +1,19 @@
 import Contenedor from "../components/Contenedor";
-import Interprete from "../components/Interprete";
+import Listado from "../components/Listado";
 import peliculas from "../data/listapeliculas";
-import Navbar from "../components/Navbar";
+
 
 function InterpretesPage() {
+  const interpretes = peliculas.flatMap(pelicula => 
+    pelicula.actores.map(actor => ({...actor, esNota10: pelicula.nota === 10}))
+  );
+
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
-
+     
       <Contenedor titulo="Intérpretes de películas destacadas">
-        <p className="body-text">
-          Listado de intérpretes disponibles:
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 w-full mt-8">
-          {peliculas.map(pelicula =>
-            pelicula.actores.map((actor, index) => (
-              <Interprete
-                key={index}
-                nombre={actor.nombre}
-                foto={actor.imagen}
-                esNota10={pelicula.nota === 10}
-              >
-                {actor.biografia}
-              </Interprete>
-            ))
-          )}
-        </div>
+        <p className="body-text">Listado de intérpretes disponibles:</p>
+        <Listado tipo="interpretes" items={interpretes} />
       </Contenedor>
     </>
   );

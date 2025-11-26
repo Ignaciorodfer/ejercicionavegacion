@@ -1,4 +1,3 @@
-import Navbar from "./Navbar";
 
 function Interprete(props) {
     const { foto, nombre, esNota10 } = props;
