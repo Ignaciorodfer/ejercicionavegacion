@@ -10,7 +10,10 @@ import InterpreteDetalle from "./pages/InterpreteDetalle";
 function App() {
   return (
     <>
+
+    <header>
       <NavBar />
+      </header>
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/peliculas" element={<Peliculas />} />
